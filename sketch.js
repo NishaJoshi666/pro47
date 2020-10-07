@@ -36,7 +36,7 @@ var Snakes1Img,Snakes2Img,Snakes3Img;
 var ladder, ladderImg,ladder2,ladder3,ladder4,ladder5;
 
 var player1,player1Img,player2,player2Img,player3,player3Img,player4,player4Img;
-var dice1,dice1Img,dice2,dice2Img,dice3,dice3Img,dice4,dice4Img,dice5,dice5Img,dice6,dice6Img;
+var dice1,dice1Img,dice2Img,dice3Img,dice4Img,dice5Img,dice6Img;
 
 function preload(){
 
@@ -338,8 +338,13 @@ function setup() {
 
   dice1 = createSprite(70,90,25,25);
   dice1.addImage("dice1",dice1Img);
+  dice1.addImage("1",dice2Img);
+  dice1.addImage("2",dice3Img);
+  dice1.addImage("3",dice3Img);
+  dice1.addImage("4",dice4Img);
+  dice1.addImage("5",dice5Img);
+  dice1.addImage("6",dice6Img);
   
-
 }
 
 function draw() {
@@ -350,15 +355,26 @@ function draw() {
   if(mousePressedOver(dice1)){
     var rand = Math.round(random(1,6));
     if(rand === 1){
-      dice1.addImage("1",dice1Img);
+      dice1.changeImage("1",dice1Img);
     }
     else if(rand===2){
-      dice1.addImage("2",dice2Img);
+
+      dice1.changeImage("2",dice2Img);
     }
     else if(rand === 3){
-      dice1.addImage("3",dice3Img);
-    }
+      dice1.changeImage("3",dice3Img);
+    }    
+    else if(rand === 4){
+      dice1.changeImage("4",dice4Img);
+    }    
+    else if(rand === 5){
+      dice1.changeImage("5",dice5Img);
+    }    
+    else if(rand === 6){
+      dice1.changeImage("6",dice6Img);
+    }    
   }
+
   ladderMovement();
   ladderMove();
   snakesMovemet();
